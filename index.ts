@@ -3,56 +3,52 @@
  * @description      
  * 
  */
-import {StartEvent} from './lib/interface/startInterface';
-import {Config} from './lib/interface/configInterface';
-import{External} from './lib/interface/externalInterface';
-import {TelemetryHelper} from './lib/core/helper';
+import { TelemetryInterface } from './lib/interface/telemetryInterface';
+import { StartEvent } from './lib/interface/startInterface';
+import { Config } from './lib/interface/configInterface';
+import { External } from './lib/interface/externalInterface';
+import { TelemetryHelper } from './lib/core/helper';
 import * as defaultValues from './lib/core/constants';
 
-let Telemetry = {
+class Telemetry implements TelemetryInterface {
     /**
      * @property  {Number}                  - Version of telemetry.
      */
-    version: defaultValues.VER,
+    public version = defaultValues.VERSION;
 
     /**
      * @property  {Boolean}                 - Which defines telemetry initialization status.
      */
-    isInitialized:false,
+    private isInitialized = false;
 
     /**
      * @property  {Boolean}                 - Flag which is used to allow telemetry logs in the console or not.
      */
-    logConsole: defaultValues.ALLOW_CONSOLE_LOGS,
+    private logConsole = defaultValues.ALLOW_CONSOLE_LOGS;
 
     /**
      * @property  {Number}                  - Which defines the default telemetry start time.
      */
-    startTime:defaultValues.START_TIME,
-
+    private startTime = defaultValues.START_TIME;
 
     /**
      * @property  {Array}                   - Which is used to hold the start event data
      */
-    startData:[],
+    private startData = [];
 
     /**
      * @property {Fn}                       - Default library dispatcher
      */
-    dispatcher: defaultValues.DISPATCHER,
-    
+    private dispatcher = defaultValues.DISPATCHER;
+
 
     /**
      * @param {configurations} Object       - Configuration object to initialize the telemetry lib.
      * @description                         - Which is used to initialize the telemetry library.
      */
-    initialize:(configurations:Config) => {
-       try{ 
-        TelemetryHelper.init(configurations);
-       }catch(e){
-           throw 'Fails to initialize the telemetry with the configurations';
-       }
-    },
+    public initialize(configurations?: Config): void {
+
+    };
 
     /**
      * @param {configurations} Object       - Configuration for the telemetry 
@@ -61,24 +57,70 @@ let Telemetry = {
      * @param {others} Object               - Which is used to override the current context, object, tags, actor,runningEnv
      * @description                         - Which is used to log the telemetry start event data
      */
-    start:(configurations?:Config, id?:String, ver?:String, stateEvent?:StartEvent, others?:External) =>{
+    public start(configurations?: Config, id?: string, ver?: string, eventData?: StartEvent, others?: External): void {
         const EVENT_NAME = 'START';
-        if(!this.isInitialized && configurations){
-            TelemetryHelper.init(configurations);
-        }
-        TelemetryHelper.getEvent(EVENT_NAME, stateEvent);
-    },
+        !this.isInitialized && TelemetryHelper.init(configurations);
+        TelemetryHelper.getEvent(EVENT_NAME, eventData);
+    };
 
     /**
      * 
      */
-    end:(endEvent?:Object, others?:External)=>{
+    public end(eventData: object, others?: External): void {
+        const EVENT_NAME = 'END';
+    };
 
-    },
+    public impression(eventData:object):void{
+        const EVENT_NAME = 'IMPRESSION';
+    };
 
-    init:()=>{
+    public interact(eventData:object):void{
+        const EVENT_NAME = 'INTERACT';
+    };
+    public assess(eventData:object):void{
+        const EVENT_NAME = 'ASSESS';
+    };
+    public response(eventData:object):void{
+        const EVENT_NAME = 'RESPONSE';
+    };
+    public interrupt(eventData:object):void{
+        const EVENT_NAME = 'INTERRUPT';
+    };
+    public feedback(eventData:object):void{
+        const EVENT_NAME = 'FEEDBACK';
+    };
+    public share(eventData:object):void{
+        const EVENT_NAME = 'SHARE';
+    };
+    public audit(eventData:object):void{
+        const EVENT_NAME = 'AUDIT';
+    };
+    public error(eventData:object):void{
+        const EVENT_NAME = 'ERROR';
+    };
+    public heartBeat(eventData:object):void{
+        const EVENT_NAME = 'HEARTBEAT';
+    };
+    public log(eventData:object):void{
+        const EVENT_NAME = 'LOG';
+    };
+    public search(eventData:object):void{
+        const EVENT_NAME = 'SEARCH';
+    };
+    public metrics(eventData:object):void{
+        const EVENT_NAME = 'METRICS';
+    };
+    public summary(eventData:object):void{
+        const EVENT_NAME = 'SUMMARY';
+    };
+    public exdata(eventData:object):void{
+        const EVENT_NAME = 'EXDATA';
+    };
+    
+    private init():void{
 
-    }
+    };
 };
-export {Telemetry}
+
+export default new Telemetry();
 

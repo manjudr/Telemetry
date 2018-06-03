@@ -1,10 +1,10 @@
-import { libraryDispatcher } from "./dispatcher";
+import { libraryDispatcher } from "../dispatcher/dispatcher";
 
 export const
     ALLOW_CONSOLE_LOGS = true,
     RUNNING_ENV = 'client',
     DISPATCHER = libraryDispatcher,
-    VER = 3.0,
+    VERSION = 3.0,
     BATCH_SIZE = 20,
     API_SLUG = '/action',
     HOST = 'https://api.ekstep.in',
