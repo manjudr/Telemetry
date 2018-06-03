@@ -1,0 +1,26 @@
+{
+    "name": "telemetry-sdk",
+    "version": "1.0.0",
+    "description": "Which is used to generate an telemetry event data",
+    "main": "index.ts",
+    "directories": {
+        "example": "example",
+        "test": "test"
+    },
+    "scripts": {
+        "test": "telemetry"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/manjudr/Telemetry.git"
+    },
+    "keywords": [
+        "Telemetry"
+    ],
+    "author": "Manjunath Davanam",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/manjudr/Telemetry/issues"
+    },
+    "homepage": "https://github.com/manjudr/Telemetry#readme"
+}

@@ -1,7 +1,7 @@
 import {Pdata} from './pdataInterface'
 import {Target} from './targetInterface'
-import { libraryDispatcher} from '../utils/dispatcher'
-import * as defaultValues from '../utils/constants';
+import { libraryDispatcher} from '../dispatcher/dispatcher'
+import * as defaultValues from '../core/constants';
 
 export interface Config {
     dispatcher?: any;

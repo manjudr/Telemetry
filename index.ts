@@ -3,11 +3,11 @@
  * @description      
  * 
  */
-import {StartEvent} from './interface/startInterface';
-import {Config} from './interface/configInterface';
-import{External} from './interface/externalInterface';
-import {TelemetryHelper} from './utils/helper';
-import * as defaultValues from './utils/constants';
+import {StartEvent} from './lib/interface/startInterface';
+import {Config} from './lib/interface/configInterface';
+import{External} from './lib/interface/externalInterface';
+import {TelemetryHelper} from './lib/core/helper';
+import * as defaultValues from './lib/core/constants';
 
 let Telemetry = {
     /**
