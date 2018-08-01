@@ -1,4 +1,4 @@
-export interface Dspec {
+export interface IDspec {
     os?: string;
     make?: string;
     id?: string;

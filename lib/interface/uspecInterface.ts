@@ -1,4 +1,4 @@
-export interface Uspec {
+export interface IUspec {
     agent?: string;
     ver?: string;
     system?: string;

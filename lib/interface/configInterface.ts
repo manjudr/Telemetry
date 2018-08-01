@@ -1,15 +1,16 @@
-import {Pdata} from './pdataInterface'
-import {Target} from './targetInterface'
+import {IPdata} from './pdataInterface'
+import {ITarget} from './targetInterface'
+import {IDispatcher} from './dispatcher'
 import { libraryDispatcher} from '../dispatcher/dispatcher'
 import * as defaultValues from '../core/constants';
 
-export interface Config {
-    dispatcher?: any;
+export interface IConfig {
+    dispatcher?: IDispatcher;
     batchsize?: number ;
     runningEnv?: string;
     channel: string;
-    pdata: Pdata;
-    object: Target;
+    pdata: IPdata;
+    object: ITarget;
     uid: string;
     env: string;
 };

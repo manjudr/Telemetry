@@ -1,4 +1,4 @@
-export interface Plugin {
+export interface IPlugin {
     id: string;
     ver: string;
     category?: string;

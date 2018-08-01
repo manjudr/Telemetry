@@ -1,3 +1,3 @@
-export interface Pdata {
+export interface IPdata {
     id: string;
 }

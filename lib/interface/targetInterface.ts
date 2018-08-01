@@ -1,11 +1,11 @@
-export interface Target {
+export interface ITarget {
     id?: string;
     ver?: string;
     type?: string;
-    parent?: Parent;
+    parent?: IParent;
 }
 
-export interface Parent {
+export interface IParent {
     id?: string;
     type?: string;
 }

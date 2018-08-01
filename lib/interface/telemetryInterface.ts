@@ -1,24 +1,28 @@
+import { IStartEvent } from "./startInterface";
+import { IConfig } from "./configInterface";
+import { IConfig } from "./configInterface";
+
 /** 
  * @description TelemetryInterface
 */
 export interface TelemetryInterface {
     version: number;
-    initialize(configurations): void;
-    start(): void;
-    end(event: Object): void;
-    impression(event: Object): void;
-    interact(event: Object): void;
-    assess(event: Object): void;
-    response(event: Object): void;
-    interrupt(event: Object): void;
-    feedback(event: Object): void;
-    share(event: Object): void;
-    audit(event: Object): void;
-    error(event: Object): void;
-    heartBeat(event: Object): void;
-    log(event: Object): void;
-    search(event: Object): void;
-    metrics(event: Object): void;
-    summary(event: Object): void;
-    exdata(event: Object): void;
+    initialize(configurations:IConfig): void;
+    start(event:IStartEvent): void;
+    end(event: IEnd): void;
+    impression(event: IImpression): void;
+    interact(event: IInteract): void;
+    assess(event: IAssess): void;
+    response(event: IResponse): void;
+    interrupt(event: IInterrupt): void;
+    feedback(event: IFeedback): void;
+    share(event: IShare): void;
+    audit(event: IAudi): void;
+    error(event: IError): void;
+    heartBeat(event: IHeartbeat): void;
+    log(event: ILog): void;
+    search(event: ISearch): void;
+    metrics(event: IMetrics): void;
+    summary(event: ISummary): void;
+    exdata(event: IExdata): void;
 }

@@ -1,10 +1,10 @@
-import {Dspec} from './dspecInterface';
-import {Uspec} from './uspecInterface';
+import {IDspec} from './dspecInterface';
+import {IUspec} from './uspecInterface';
 
-export interface StartEvent {
+export interface IStartEvent {
     type?: string;
-    dspec?:Dspec;
-    uaspec?:Uspec;
+    dspec?:IDspec;
+    uaspec?:IUspec;
     loc?:string;
     mode?: string;
     pageid?: string;
